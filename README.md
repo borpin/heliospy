@@ -1,11 +1,13 @@
-Helios Plug-in for Smarthome.py
--------------------------------
+# Helios RS-485 Communication Library
 
-Plug-in for Helios ventilation systems using an USB RS-485 interface for [SmartHome.py](http://mknx.github.io/smarthome/).
+## Introduction
 
-Currently running for my Helios EC300 PRO using the USB-RS485 Interface EXSYS EX-1303.
+I found the code to communicate with the Helios RS-485 bus via a USB interface from here. [SmartHome.py](http://mknx.github.io/smarthome/).
 
-Supported functions:
+I currently have it running for my Helios EC500 PRO using the USB-RS485 Interface on an Orange Pi Zero.
+
+## From the source documentation
+### Supported functions:
 
 * Reading temperature values
 * Turn ventilation system on/off
@@ -16,61 +18,10 @@ Supported functions:
 
 Values will be read periodically from the ventilation system.
 
-Plug-in can be used as command line tool (Python module argparse required).
+Using this plug in as a command line tool (Python module argparse required).
 
-Sample items.conf
+# Improvements
 
-```
-[ventilation]
-    [[power_state]]
-        type = num
-        helios_var = power_state 
-        visu=yes
-    [[bypass_disabled]]
-        type = num
-        helios_var = bypass_disabled 
-        visu=yes
-    [[outside_temp]]
-        type = num
-        helios_var = outside_temp 
-        visu=yes
-    [[incoming_temp]]
-        type = num
-        helios_var = incoming_temp 
-        visu=yes
-    [[inside_temp]]
-        type = num
-        helios_var = inside_temp 
-        visu=yes
-    [[exhaust_temp]]
-        type = num
-        helios_var = exhaust_temp 
-        visu=yes
-    [[fanspeed]]
-        type = num
-        helios_var = fanspeed 
-        visu=yes
-    [[bypass_temp]]
-        type = num
-        helios_var = bypass_temp 
-        visu=yes
-    [[max_fanspeed]]
-        type = num
-        helios_var = max_fanspeed 
-        visu=yes
-    [[min_fanspeed]]
-        type = num
-        helios_var = min_fanspeed 
-        visu=yes
-```
+I need to improve the controlling script.  Pretty rubbish (though it does work).
 
-Configuration in SmartHome.py plugin.conf:
-
-```
-[helios]
-    class_name = Helios
-    class_path = plugins.helios
-    tty = /dev/ttyUSB0
-    cycle = 60 # default 300 seconds
-```
-
+Feel free to clone and improve :)
