@@ -22,6 +22,7 @@ Using this plug in as a command line tool (Python module argparse required).
 
 # Improvements
 
-I need to improve the controlling script.  Pretty rubbish (though it does work).
+* I need to improve the controlling script.  Pretty rubbish (though it does work).
+* Introduce a service file for init.d and systemd
 
 Feel free to clone and improve :)
